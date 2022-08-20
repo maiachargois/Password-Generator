@@ -1,50 +1,20 @@
 // Assignment code here
-var chars = "0123456789/*abcdefghijklmnopqrstuvwxyz!@#$%^&*()+-"
-var special = [
-    "!",
-    "\u0022",
-    "#",
-    "$",
-    "%",
-    "&",
-    "'",
-    "(",
-    ")",
-    "*",
-    "+",
-    ",",
-    "-",
-    ".",
-    "/",
-    ":",
-    ";",
-    "<",
-    "=",
-    ">",
-    "?",
-    "@",
-    "\u005B",
-    "\u005C",
-    "\u005D",
-    "^",
-    "_",
-    "`",
-    "{",
-    "|",
-    "}",
-    "~",
-];
-var lowercase = "abcdefghijklmnopqrstuvwxyz".split("");
+//boolean flag for prompts later //
+const flags = {
+    uppercase: false,
+    numbers: false,
+    symbols: false,
+    length: 5
+}
+app.js
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 
 // The following initiates the prompts for the user //
-var length = confirm("Enter a passowrd length no less than 8 characters and no more than 128")),
-    charType = confirm("would you like your ")
-    password = generatePassword();
-
-
+var length = prompt("Enter a passowrd length \n no less than 8 characters and no more than 128?")
+    charType = confirm("would you like your special characters in your password? ")
 
 
 
@@ -57,10 +27,40 @@ function writePassword() {
     var charSets = {
         lowercase: 'abcdefghijklmnopqrstuvwxyz'.split(""),
         uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(""),
-        numeric: '0123456789',
-        special: 
+        numeric: '0123456789'.split(""),
+        special:[ "\u0022",
+        "#",
+        "$",
+        "%",
+        "&",
+        "'",
+        "(",
+        ")",
+        "*",
+        "+",
+        ",",
+        "-",
+        ".",
+        "/",
+        ":",
+        ";",
+        "<",
+        "=",
+        ">",
+        "?",
+        "@",
+        "\u005B",
+        "\u005C",
+        "\u005D",
+        "^",
+        "_",
+        "`",
+        "{",
+        "|",
+        "}",
+        "~"].split
       }
-      var charSet = charSets[charType.toLowerCase()] || charSets.lowercase;
+      var chars = chars[charType.toLowerCase()] || charSets.lowercase;
       var retVal = "";
       for (var i = 0; i < length; i++) {
         retVal += charSet.charAt(Math.floor(Math.random() * charSet.length));
